@@ -8,6 +8,7 @@ const dbConnection = mysql2.createPool({
   host: "gizachewm.com",
   password: process.env.PASSWORD,
   connectionLimit: 10,
+  port: 3306
 
 });
 
