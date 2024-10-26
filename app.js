@@ -40,12 +40,15 @@ console.log('test ')
 async function start() {
   try {
     await dbConnection.execute('select "test 2"');
-    console.log("database connection established");
-    app.listen(port);
-    console.log("listening on port " + port);
+    console.log("Database connection established");
+
+    app.listen(port, () => {
+      console.log("Listening on port " + port);
+    });
   } catch (err) {
-    console.log(err);
+    console.error("Error connecting to the database:", err);
   }
 }
+
 
 start();
